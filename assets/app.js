@@ -31,3 +31,31 @@
     block.innerHTML = html;
   });
 })();
+// ===== СЧЕТЧИК ПОСЕЩЕНИЙ =====
+(function () {
+  function initVisitCounter() {
+    if (document.getElementById('visit-counter')) return;
+
+    const counter = document.createElement('div');
+    counter.id = 'visit-counter';
+    counter.innerHTML = 'Посещений: <span id="counter-value">...</span>';
+    document.body.appendChild(counter);
+
+    fetch('/counter.php', { cache: 'no-store' })
+      .then((res) => res.text())
+      .then((data) => {
+        const el = document.getElementById('counter-value');
+        if (el) el.textContent = String(data).trim();
+      })
+      .catch(() => {
+        const el = document.getElementById('counter-value');
+        if (el) el.textContent = '—';
+      });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initVisitCounter);
+  } else {
+    initVisitCounter();
+  }
+})();
