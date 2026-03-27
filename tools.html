@@ -244,6 +244,185 @@
 @media (max-width:1180px){.home-intro,.section-links-grid,.competitor-grid{grid-template-columns:1fr 1fr}}
 @media (max-width:960px){.home-intro,.section-links-grid,.competitor-grid{grid-template-columns:1fr}.section-button{min-height:auto}}
 
+
+/* ===== Dashboard style for tools page ===== */
+.page-header{
+  background:linear-gradient(135deg,#ffffff 0%,#f6faff 100%);
+  border:1px solid #d9e7f7;
+  box-shadow:0 18px 36px rgba(17,74,139,.10);
+}
+.page-header h2{
+  color:#123f72;
+  letter-spacing:.01em;
+}
+.page-header p{
+  max-width:980px;
+}
+
+.dashboard-banner{
+  margin:0 0 18px;
+  padding:20px 20px 18px;
+  border-radius:20px;
+  background:linear-gradient(135deg,#fff5e8 0%,#ffedd5 100%);
+  border:1px solid #ffd7a3;
+  box-shadow:0 14px 30px rgba(245,158,11,.14);
+  text-align:center;
+}
+.critical-title{
+  font-weight:900;
+  color:#b45309;
+  margin-bottom:6px;
+  font-size:15px;
+  text-transform:uppercase;
+  letter-spacing:.05em;
+}
+.critical-subtitle{
+  color:#8a5a13;
+  font-size:14px;
+  line-height:1.55;
+  margin-bottom:14px;
+}
+.critical-links-row{
+  display:flex;
+  justify-content:center;
+  flex-wrap:wrap;
+  gap:12px;
+}
+.critical-chip{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  padding:12px 18px;
+  border-radius:999px;
+  font-weight:800;
+  font-size:14px;
+  text-decoration:none;
+  transition:transform .2s ease, box-shadow .2s ease, filter .2s ease;
+  box-shadow:0 8px 18px rgba(0,0,0,.10);
+}
+.critical-chip .chip-icon{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+}
+.critical-chip.tg{background:#229ED9;color:#fff;border:none}
+.critical-chip.prom{background:#4f46e5;color:#fff;border:none}
+.critical-chip.max{background:#10b981;color:#fff;border:none}
+.critical-chip:hover{
+  transform:translateY(-3px) scale(1.03);
+  box-shadow:0 14px 24px rgba(0,0,0,.16);
+  filter:saturate(1.05);
+}
+@keyframes chipPulse{
+  0%{box-shadow:0 0 0 0 rgba(245,158,11,.30), 0 8px 18px rgba(0,0,0,.10);}
+  70%{box-shadow:0 0 0 14px rgba(245,158,11,0), 0 8px 18px rgba(0,0,0,.10);}
+  100%{box-shadow:0 0 0 0 rgba(245,158,11,0), 0 8px 18px rgba(0,0,0,.10);}
+}
+.pulse-chip{animation:chipPulse 2.2s infinite}
+
+/* Sections and cards */
+.section-head h3{
+  color:#123f72;
+  font-size:28px;
+}
+.section-head p{
+  color:#6b7b95;
+}
+.grid{
+  gap:18px;
+}
+.card{
+  background:linear-gradient(180deg,#ffffff 0%,#fbfdff 100%);
+  border:1px solid #dce8f5;
+  box-shadow:0 14px 28px rgba(17,74,139,.08);
+}
+.link-card{
+  position:relative;
+  overflow:hidden;
+  transition:transform .22s ease, box-shadow .22s ease, border-color .22s ease, background .22s ease;
+}
+.link-card::before{
+  content:'';
+  position:absolute;
+  left:0; top:0; right:0;
+  height:4px;
+  background:linear-gradient(90deg,#103d74 0%,#2d79cf 100%);
+  opacity:.95;
+}
+.link-card:hover{
+  transform:translateY(-6px);
+  box-shadow:0 20px 34px rgba(17,74,139,.14);
+  border-color:#b9d3f1;
+  background:#f8fbff;
+}
+.card h4{
+  color:#123f72;
+}
+.card p{
+  color:#64748b;
+}
+.card-icon{
+  width:56px;
+  height:56px;
+  border-radius:16px;
+  background:linear-gradient(135deg,#eaf3ff 0%,#d6e8ff 100%);
+  color:#114a8b;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.8), 0 8px 18px rgba(17,74,139,.08);
+  font-size:22px;
+}
+.meta, .meta a{
+  color:#0f4d93;
+  font-weight:800;
+}
+.list li{
+  background:linear-gradient(180deg,#ffffff 0%,#fbfdff 100%);
+  border:1px solid #dfebf8;
+  box-shadow:0 10px 22px rgba(17,74,139,.06);
+}
+.resource-title{
+  color:#123f72;
+}
+.resource-desc{
+  color:#64748b;
+}
+.resource-actions .chip{
+  background:linear-gradient(135deg,#edf5ff 0%,#dcecff 100%);
+  border:1px solid #cfe2fb;
+  color:#114a8b;
+  box-shadow:0 6px 12px rgba(17,74,139,.06);
+  transition:transform .18s ease, box-shadow .18s ease, background .18s ease;
+}
+.resource-actions .chip:hover,
+.quick-links-bar .chip:hover,
+.chip:hover{
+  transform:translateY(-2px);
+  box-shadow:0 10px 18px rgba(17,74,139,.12);
+  background:#edf5ff;
+}
+.footer{
+  background:linear-gradient(180deg,#ffffff 0%,#f8fbff 100%);
+  border:1px solid #dce8f5;
+  box-shadow:0 12px 24px rgba(17,74,139,.06);
+}
+
+/* subtle dashboard polish for important blocks */
+.section{
+  margin:26px 0;
+}
+@media (max-width:720px){
+  .critical-links-row{
+    display:grid;
+    grid-template-columns:1fr;
+  }
+  .critical-chip{
+    width:100%;
+    justify-content:flex-start;
+  }
+  .section-head h3{
+    font-size:24px;
+  }
+}
+
 </style></head><body>
 <div class='layout'>
 <aside class='sidebar'>
@@ -255,6 +434,22 @@
 <div class='mobile-drawer' id='drawer'><div class='mobile-drawer-panel'><a class='brand-link' href='index.html'><div class='brand-logo-wrap'><img class='brand-logo' src='assets/praktik_home.png' alt='ПРАКТИК Home'></div><div class='brand-copy'><h1>ПРОМЕТ ГС</h1><p>Внутренний портал по Гардеробной Системе ПРАКТИК Home</p></div></a><nav class='nav'><a href='index.html' class=''><span>🏠</span><span>Главная</span></a><a href='production.html' class=''><span>🏭</span><span>Производство</span></a><a href='competitors.html' class=''><span>⚔</span><span>Конкуренты</span></a><a href='sales.html' class=''><span>💰</span><span>Продажи</span></a><a href='training.html' class=''><span>🎓</span><span>Обучение</span></a><a href='tools.html' class='active'><span>📚</span><span>Полезные материалы</span></a><a href='news.html' class=''><span>📰</span><span>Новости</span></a><a href='feedback.html' class=''><span>💡</span><span>Улучшения сайта</span></a></nav><div style='margin-top:12px'><button class='menu-btn' data-close-menu>Закрыть меню</button></div></div></div>
 
 <div class='page-header'><div class='breadcrumbs'>Главная / Полезные материалы</div><h2>Полезные материалы</h2><p>Подборка фото, видео, документов, каталогов и рабочих ссылок по Гардеробной Системе ПРАКТИК Home.</p></div>
+
+<div class='critical-links dashboard-banner'>
+  <div class='critical-title'>⚠ ВАЖНО: КАНАЛЫ СВЯЗИ</div>
+  <div class='critical-subtitle'>Подпишитесь на рабочие группы, чтобы всегда оставаться на связи.</div>
+  <div class='critical-links-row'>
+    <a class='critical-chip tg pulse-chip' href='https://t.me/+jNiSTmLkfDpiNjVi' target='_blank' rel='noopener'>
+      <span class='chip-icon'>📢</span><span>Дилерская группа Telegram</span>
+    </a>
+    <a class='critical-chip prom' href='https://t.me/+SQsC82CgO8g4MzVi' target='_blank' rel='noopener'>
+      <span class='chip-icon'>👥</span><span>Сотрудники ПРОМЕТ</span>
+    </a>
+    <a class='critical-chip max pulse-chip' href='https://max.ru/join/jSKYMrJfqbQkuSYcuHy1BCMpaZprKi1rwEfeyycrGKo' target='_blank' rel='noopener'>
+      <span class='chip-icon'>💬</span><span>Дилерская группа MAX</span>
+    </a>
+  </div>
+</div>
 
 <section class='section'>
   <div class='section-head'><div><h3>Быстрый доступ</h3><p>Основные материалы для работы, презентации и продаж.</p></div></div>
