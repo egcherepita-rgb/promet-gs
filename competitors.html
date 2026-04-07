@@ -105,8 +105,8 @@
   --p3: 88%;
   --p4: 93%;
   --p5: 98%;
-  width:260px;
-  height:260px;
+  width:320px;
+  height:320px;
   border-radius:50%;
   position:relative;
   background:
@@ -129,7 +129,7 @@
 .pie-chart::after{
   content:'';
   position:absolute;
-  inset:65px;
+  inset:82px;
   background:#ffffff;
   border-radius:50%;
   box-shadow:
@@ -139,39 +139,37 @@
 .pie-center{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;flex-direction:column;z-index:1;text-align:center}
 .pie-center strong{font-size:34px;line-height:1;color:#243a5e}
 .pie-center span{font-size:13px;color:#607089;font-weight:800;letter-spacing:.06em}
-.share-grid{display:grid;gap:12px}
-.share-row{display:grid;grid-template-columns:auto 1fr;gap:12px;align-items:start}
-.share-dot{width:14px;height:14px;border-radius:50%;margin-top:4px}
-.share-name{font-weight:900;color:#243a5e}
-.share-val{font-size:14px;color:#42526b;font-weight:700}
+.share-grid{display:grid;gap:14px;width:100%;max-width:320px}
+.share-row{display:grid;grid-template-columns:auto 1fr;gap:14px;align-items:center;padding:10px 12px;border-radius:16px;transition:transform .2s ease, background .2s ease, box-shadow .2s ease;border:1px solid transparent}
+.share-card-text{display:grid;gap:5px}
+.share-topline{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap}
+.share-dot{width:16px;height:16px;border-radius:50%;margin-top:0;transition:transform .2s ease, box-shadow .2s ease;box-shadow:0 0 0 5px rgba(255,255,255,.78)}
+.share-name{font-weight:900;color:#243a5e;font-size:16px;letter-spacing:.02em}
+.share-percent-badge{display:inline-flex;align-items:center;justify-content:center;padding:4px 9px;border-radius:999px;background:linear-gradient(90deg,#eef5ff,#f5fbef);border:1px solid #d9e6f5;color:#24476e;font-size:12px;font-weight:900;white-space:nowrap}
+.share-val{font-size:14px;color:#42526b;font-weight:800}
 .pie-chart:hover{
-  transform:scale(.86);
+  transform:scale(.89);
   box-shadow:
     inset 0 0 0 8px rgba(255,255,255,.65),
     0 24px 48px rgba(36,58,94,.22);
   filter:saturate(1.08);
 }
-.share-row{
-  padding:8px 10px;
-  border-radius:12px;
-  transition:transform .2s ease, background .2s ease, box-shadow .2s ease;
-}
+.pie-center-labels{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;flex-direction:column;z-index:2;text-align:center;pointer-events:none}
+.pie-center-big{font-size:34px;font-weight:900;line-height:1;color:#1f3d63}
+.pie-center-small{margin-top:6px;font-size:13px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:#6a7d96}
 .share-row:hover{
   background:#f6faff;
   transform:translateX(4px);
   box-shadow:0 8px 18px rgba(17,74,139,.08);
+  border-color:#dfeaf8;
 }
 .share-row:hover .share-dot{
   transform:scale(1.2);
 }
-.share-dot{
-  transition:transform .2s ease, box-shadow .2s ease;
-  box-shadow:0 0 0 4px rgba(255,255,255,.7);
-}
 @keyframes pieGrow{
-  0%{transform:scale(.72) rotate(-120deg);opacity:0}
-  60%{transform:scale(.88) rotate(8deg);opacity:1}
-  100%{transform:scale(.82) rotate(0deg);opacity:1}
+  0%{transform:scale(.76) rotate(-120deg);opacity:0}
+  60%{transform:scale(.92) rotate(8deg);opacity:1}
+  100%{transform:scale(.86) rotate(0deg);opacity:1}
 }
 .market-note{margin-top:14px;padding:12px 14px;border-radius:16px;background:#f6f9fd;color:#41526d;border:1px solid #e2eaf5;line-height:1.55}
 .market-note strong{color:var(--brand)}
@@ -204,7 +202,7 @@
 
 
 @media (max-width:1180px){.market-grid,.competitor-grid{grid-template-columns:1fr}.pie-layout{grid-template-columns:1fr}.layout{grid-template-columns:1fr}.sidebar{display:none}.content{padding:12px}.mobile-topbar{display:block}.page-header h2{font-size:28px}}
-@media (max-width:760px){.growth-chart{gap:10px;height:250px;padding-left:28px}.bar{width:58px}.bar-year{font-size:12px}.axis-labels{left:2px;font-size:11px;gap:29px}.pie-layout{grid-template-columns:1fr}.pie-chart{width:220px;height:220px}.pie-chart::after{inset:55px}.pie-center strong{font-size:28px}.share-row{grid-template-columns:auto 1fr}.competitor-head{grid-template-columns:1fr}.competitor-logo{min-height:126px;padding:16px}.competitor-logo img{max-height:92px}.logo-ellipse{max-height:100px !important}.wordmark-plain{min-height:90px;font-size:28px}}
+@media (max-width:760px){.growth-chart{gap:10px;height:250px;padding-left:28px}.bar{width:58px}.bar-year{font-size:12px}.axis-labels{left:2px;font-size:11px;gap:29px}.pie-layout{grid-template-columns:1fr}.pie-chart{width:250px;height:250px}.pie-chart::after{inset:64px}.pie-center strong{font-size:28px}.share-row{grid-template-columns:auto 1fr}.competitor-head{grid-template-columns:1fr}.competitor-logo{min-height:126px;padding:16px}.competitor-logo img{max-height:92px}.logo-ellipse{max-height:100px !important}.wordmark-plain{min-height:90px;font-size:28px}.share-grid{max-width:100%}.share-name{font-size:15px}.share-val{font-size:13px}.pie-center-big{font-size:28px}.pie-center-small{font-size:11px}}
 
 .compat-table-card{background:#fff;border:1px solid var(--line);border-radius:22px;box-shadow:var(--shadow);padding:20px}
 .compat-table-wrap{overflow:auto;border-radius:18px;border:1px solid #dce6f2;background:#fff}
@@ -293,16 +291,15 @@
       <h3 class='block-title'>Доли игроков, 2025 г</h3>
       <div class='pie-layout'>
         <div class='pie-wrap'>
-          <div class='pie-chart'>
-</div>
+          <div class='pie-chart'><div class='pie-center-labels'><div class='pie-center-big'>2025</div><div class='pie-center-small'>доли рынка</div></div></div>
         </div>
         <div class='share-grid'>
-          <div class='share-row'><span class='share-dot' style='background:#8dc63f'></span><div><div class='share-name'>АРИСТО</div><div class='share-val'>42% · 2236 млн ₽</div></div></div>
-          <div class='share-row'><span class='share-dot' style='background:#ff5a1f'></span><div><div class='share-name'>ТИТАН GS</div><div class='share-val'>31% · 1640 млн ₽</div></div></div>
-          <div class='share-row'><span class='share-dot' style='background:#f3b8b8'></span><div><div class='share-name'>LARVIJ</div><div class='share-val'>15% · 803 млн ₽</div></div></div>
-          <div class='share-row'><span class='share-dot' style='background:#7c63b8'></span><div><div class='share-name'>ABELLE</div><div class='share-val'>5% · 283 млн ₽</div></div></div>
-          <div class='share-row'><span class='share-dot' style='background:#57b8d7'></span><div><div class='share-name'>ПРОМЕТ</div><div class='share-val'>5% · 280 млн ₽</div></div></div>
-          <div class='share-row'><span class='share-dot' style='background:#f59e0b'></span><div><div class='share-name'>ПРОЧИЕ</div><div class='share-val'>2% · 81 млн ₽</div></div></div>
+          <div class='share-row'><span class='share-dot' style='background:#8dc63f'></span><div class='share-card-text'><div class='share-topline'><div class='share-name'>АРИСТО</div><span class='share-percent-badge'>42%</span></div><div class='share-val'>2236 млн ₽</div></div></div>
+          <div class='share-row'><span class='share-dot' style='background:#ff5a1f'></span><div class='share-card-text'><div class='share-topline'><div class='share-name'>ТИТАН GS</div><span class='share-percent-badge'>31%</span></div><div class='share-val'>1640 млн ₽</div></div></div>
+          <div class='share-row'><span class='share-dot' style='background:#f3b8b8'></span><div class='share-card-text'><div class='share-topline'><div class='share-name'>LARVIJ</div><span class='share-percent-badge'>15%</span></div><div class='share-val'>803 млн ₽</div></div></div>
+          <div class='share-row'><span class='share-dot' style='background:#7c63b8'></span><div class='share-card-text'><div class='share-topline'><div class='share-name'>ABELLE</div><span class='share-percent-badge'>5%</span></div><div class='share-val'>283 млн ₽</div></div></div>
+          <div class='share-row'><span class='share-dot' style='background:#57b8d7'></span><div class='share-card-text'><div class='share-topline'><div class='share-name'>ПРОМЕТ</div><span class='share-percent-badge'>5%</span></div><div class='share-val'>280 млн ₽</div></div></div>
+          <div class='share-row'><span class='share-dot' style='background:#f59e0b'></span><div class='share-card-text'><div class='share-topline'><div class='share-name'>ПРОЧИЕ</div><span class='share-percent-badge'>2%</span></div><div class='share-val'>81 млн ₽</div></div></div>
         </div>
       </div>
 </div>
